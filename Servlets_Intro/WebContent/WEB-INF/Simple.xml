@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mydetails>
+	<name>srujan</name>
+	<job>Software Developer</job>
+	<salary>26674</salary>
+	<Address>
+		<h-no>17-4/B</h-no>
+		<colony>sri nagar</colony>
+		<district>siddipet</district>
+		<state>Telangana</state>
+		<pincode>502103</pincode>
+	</Address>
+	<mnumber>864579213</mnumber>
+</mydetails>

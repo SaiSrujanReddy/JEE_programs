@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<style type="text/css">
+body{
+margin:0;
+padding:0;
+background: url("iron.jpg");
+
+}
+
+
+h1{
+
+margin: :0;
+padding: 0 0 20px;
+text-align: center;
+font-size: 22px;
+
+
+}
+.loginbox{
+width:320px;
+height:420px;
+background: #000;
+color:#fff;
+top:50%;
+left:25%;
+position: absolute;
+transform:translate(-50%,-50%);
+box-sizing: border-box;
+padding: 70px 30px;
+}
+.avthar{
+width:100px;
+height:100px;
+border-radius: 50%;
+position: absolute;
+top:-50px;
+left:38%;
+}
+
+.loginbox p{
+margin: 0;
+padding: 0;
+font-weight: bold;
+}
+
+.loginbox input {
+	width: 100%;
+	margin-bottom: 20px;
+}
+
+.loginbox input[type="text"],input[type="password"]{
+border:none;
+border-bottom: 1px solid #fff;
+background: transparent;
+outline: none;
+height: 40px;
+color:#fff;
+font-size: 16px;
+}
+.loginbox input[type="submit"]{
+border: none;
+outline: none;
+height: 40px;
+background: #fff;
+font-size: 18px;
+border-radius: 20px; 
+}
+
+</style>
+<title>Insert title here</title>
+</head>
+<body>
+<div class="loginbox">
+<img src="person.png" class="avthar">
+<h1 >Login </h1>
+<form action="./LoginSrv" >
+	
+			<p>Username</p>
+			<input type="text" name="uname"/>
+		
+		
+			<p>Password</p>
+			<input type="password" name="pwd"/>
+				
+		
+		
+			<input type="submit" value="login"/>
+			
+	
+</form>
+</div>
+</body>
+</html>
