@@ -6,6 +6,7 @@ import java.nio.channels.NetworkChannel;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -23,8 +24,9 @@ import javax.servlet.ServletRequest;
 import javax.servlet.ServletResponse;
 
 public class EmpSrv extends GenericServlet{
-	Connection con;
-	PreparedStatement ps;
+	Connection con=null;
+	PreparedStatement ps=null;
+	ResultSet rs=null;
 	 @Override
 	public void init(ServletConfig config) throws ServletException {
 		 try {
@@ -80,7 +82,6 @@ public class EmpSrv extends GenericServlet{
 			
 			out.print("Starting");
 			ps=con.prepareStatement("insert into EMPREGSITER values(?,?,?,?,?,?,?,?)") ;
-	
 		
 		Set<String> st = feild.keySet();
 			
@@ -97,7 +98,7 @@ public class EmpSrv extends GenericServlet{
 			String[] values = feild.get(Dfeild);
 			String value="";
 			for(String val:values) {
-				value=value+","+val;
+				value=value+" "+val;
 				
 			}
 			System.out.println(value);
@@ -113,6 +114,13 @@ public class EmpSrv extends GenericServlet{
 			int j=ps.executeUpdate();
 		
 			out.println(j+"rows updated");
+			out.println("rows after updateing are ");
+			ps=con.prepareStatement("select * from EMPREGSITER");
+			rs = ps.executeQuery();
+			while(rs.next()) {
+				out.println(rs.getString(1)+"  "+rs.getString(2)+"  "+rs.getString(3)+"  "+rs.getString(4)+"  "+rs.getString(5)+"  "+rs.getInt(6)+"  "+rs.getString(7)+"  "+rs.getString(8));
+			}
+			
 			
 		} catch (SQLException e) {
 			

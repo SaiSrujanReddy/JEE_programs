@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html>
-<head>
-<meta charset="ISO-8859-1">
-<title>Insert title here</title>
-</head>
-<body>
 
-</body>
-<
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,7 +7,7 @@
 body{
 margin=0;
 padding=0;
-background: url("iron2.jpeg");
+background: url("index.jpg");
 
 }
 .register{
@@ -24,7 +15,7 @@ width:450px;
 height:1120px;
 color:#fff;
 top:80%;
-left:75%;
+left:25%;
 position: absolute;
 transform:translate(-50%,-50%);
 box-sizing: border-box;
@@ -51,7 +42,7 @@ font-weight: bold;
 }
 
 
-.register input[type="text"],input[type="password"],input[type="email"]{
+.register input[type="text"],input[type="password"]{
 border:none;
 border-bottom: 1px solid #fff;
 background: transparent;
@@ -59,9 +50,6 @@ outline: none;
 height: 40px;
 color:#fff;
 font-size: 16px;
-}
-.register input[type="date"]{
-width:50%
 }
 .register input[type="submit"]{
 border: none;
@@ -77,20 +65,20 @@ left:25%
 </style>
 <title>Insert title here</title>
 </head>
-<body>
+<body >
 <header>
 <h1>Regnant Software solutions </h1><hr>
 </header>
 <div class="register">
 <h1>Registration page</h1>
-<form action="./Registation" >
+<form action="./Register" >
 
-	<p>UserName</p>
+	<p>FirstName</p>
 	<input type="text" name="fname"/>
-	  
-	<p>password</p>
-	<input type="password" name="password">
-	
+
+	<p>LastName</p>
+	<input type="text" name="lname"/>
+   
 	<p>gender</p>
 	<input type="radio" name="gender" value="male"/>male
 	<input type="radio" name="gender" value="female"/>Female
@@ -98,15 +86,20 @@ left:25%
 <h4>BirthDay</h4>
 <input type="date" name="bday" />
 
-
+<p>address</p>
+	<textarea rows="4" cols="25" name="address"></textarea>
 
 	<p>Phone no</p>
 	<input type="text" name="PhoneNo"/>
 
 	<p>mail</p>
-	<input type="email" name="mail"/>
+	<input type="text" name="mail"/>
 
-	
+	<p>Hobbies</p>
+	<input type="checkbox" name="Hobbies" value="gaming" >Gaming
+	&emsp;&emsp;<input type="checkbox" name="Hobbies"value="cooking">cooking
+	<input type="checkbox" name="Hobbies" value="riding" >Riding
+	&emsp;&emsp;<input type="checkbox" name="Hobbies" value="Reading">Reading<br><br>
 <input type="submit"  value="signup"/>
 </form></div>
 </body>
