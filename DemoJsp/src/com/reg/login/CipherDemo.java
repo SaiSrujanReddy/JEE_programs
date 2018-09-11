@@ -1,4 +1,4 @@
-package com.reg.demo;
+package com.reg.login;
 
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.StandardCharsets;

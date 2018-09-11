@@ -12,16 +12,16 @@ import java.util.Iterator;
 import java.util.Map;
 import java.util.Set;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletConfig;
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import com.reg.demo.CipherDemo;
-/**
- * Servlet implementation class Registation
- */
+
 
 public class Registration extends HttpServlet {
 	
@@ -33,10 +33,17 @@ public class Registration extends HttpServlet {
 
 	 @Override
 	public void init(ServletConfig config) throws ServletException {
+		 ServletContext context = config.getServletContext();
+		 String path = context.getInitParameter("path");
+		 System.out.println(path);
+		 String uname = context.getInitParameter("uname");
+		 System.out.println(uname);
+		 String password=context.getInitParameter("password");
+		 System.out.println(password);
 		 try {
 			Class.forName("oracle.jdbc.OracleDriver");
-			con=DriverManager.getConnection("jdbc:oracle:thin:@localhost:1521:xe","system","srujan");
-			System.out.println("done");
+			con=DriverManager.getConnection(path,uname,password);
+			System.out.println("Regis connection done");
 		} catch (SQLException | ClassNotFoundException e) {
 		
 			e.printStackTrace();
@@ -78,7 +85,6 @@ Map<String, String[]> feild = request.getParameterMap();
 					i=3;
 					System.out.println("done");
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
 			}
@@ -97,6 +103,7 @@ Map<String, String[]> feild = request.getParameterMap();
 			}
 			System.out.println(value);
 			System.out.println(i);
+			value=value.trim();
 			ps.setString(i, value);
 			i++;
 			
@@ -109,6 +116,7 @@ Map<String, String[]> feild = request.getParameterMap();
 		
 			out.println(j+"rows updated");
 			out.println("rows after updateing are ");
+			response.sendRedirect("Login.html");
 	}
 		 catch (SQLException e) {
 				

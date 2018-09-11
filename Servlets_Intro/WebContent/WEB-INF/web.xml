@@ -1,16 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd" id="WebApp_ID" version="3.0">
+  <context-param>
+    <param-name>uname</param-name>
+    <param-value>system</param-value>
+  </context-param>
+  <context-param>
+    <param-name>password</param-name>
+    <param-value>srujan</param-value>
+  </context-param>
+  <context-param>
+    <param-name>path</param-name>
+    <param-value>jdbc:oracle:thin:@localhost:1521:xe</param-value>
+  </context-param>
   <welcome-file-list>
     <welcome-file>Login.html</welcome-file>
   </welcome-file-list>
-  <servlet>
-    <servlet-name>Sone</servlet-name>
-    <servlet-class>com.reg.demo.DispDetails</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>Sone</servlet-name>
-    <url-pattern>/one</url-pattern>
-  </servlet-mapping>
   <servlet>
     <servlet-name>Loginsrv</servlet-name>
     <servlet-class>com.reg.demo.LoginSrv</servlet-class>
@@ -20,39 +24,30 @@
     <url-pattern>/LoginSrv</url-pattern>
   </servlet-mapping>
   <servlet>
-    <servlet-name>cal</servlet-name>
-    <servlet-class>com.reg.demo.Calculator</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>cal</servlet-name>
-    <url-pattern>/Calculator</url-pattern>
-  </servlet-mapping>
-  <servlet>
-    <servlet-name>esrv</servlet-name>
-    <servlet-class>com.reg.empdetails.EmpSrv</servlet-class>
-    <load-on-startup>1</load-on-startup>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>esrv</servlet-name>
-    <url-pattern>/Register</url-pattern>
-  </servlet-mapping>
-  <servlet>
     <servlet-name>Registration</servlet-name>
     <servlet-class>com.reg.login.Registration</servlet-class>
-     <load-on-startup>1</load-on-startup>
+    <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
     <servlet-name>Registration</servlet-name>
     <url-pattern>/Registation</url-pattern>
   </servlet-mapping>
   <servlet>
-      <servlet-name>Login</servlet-name>
+    <servlet-name>mcheck</servlet-name>
+    <servlet-class>com.reg.login.forgot.MailCheck</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>mcheck</servlet-name>
+    <url-pattern>/mailCheck</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <servlet-name>login</servlet-name>
     <servlet-class>com.reg.login.Login</servlet-class>
     <load-on-startup>1</load-on-startup>
   </servlet>
   <servlet-mapping>
-    <servlet-name>Login</servlet-name>
+    <servlet-name>login</servlet-name>
     <url-pattern>/Login</url-pattern>
   </servlet-mapping>
 </web-app>

@@ -2,6 +2,9 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
 <style type="text/css">
 body{
 margin:0;
@@ -32,14 +35,7 @@ transform:translate(-50%,-50%);
 box-sizing: border-box;
 padding: 70px 30px;
 }
-.avthar{
-width:100px;
-height:100px;
-border-radius: 50%;
-position: absolute;
-top:-50px;
-left:38%;
-}
+
 
 .loginbox p{
 margin: 0;
@@ -52,7 +48,7 @@ font-weight: bold;
 	margin-bottom: 20px;
 }
 
-.loginbox input[type="text"],input[type="password"]{
+.loginbox input[type="text"],input[type="email"]{
 border:none;
 border-bottom: 1px solid #fff;
 background: transparent;
@@ -71,28 +67,21 @@ border-radius: 20px;
 }
 
 </style>
-<title>Login Page</title>
-</head>
-<body >
+</body>
 <div class="loginbox">
-<img src="person.png" class="avthar">
-<h1 >Login </h1>
-<form action="./Login" >
+
+<h1 >Forgot Password </h1>
+<form action="./mailCheck" >
 	
-			<p>Username</p>
-			<input type="text" name="uname"/>
+			<p>Enter the mail id</p>
+			<input type="email" name="mail"/>
 		
-		
-			<p>Password</p>
-			<input type="password" name="pwd"/>
 				
+			<input type="submit" value="submit"/>
 		
-		
-			<input type="submit" value="login"/>
-			Not yet Registered?<a href="Registration.html">Registration</a>
-			Forgot Password?<a href="Forgot.html">Forgot</a>
 	
 </form>
 </div>
-</body>
+
+
 </html>
